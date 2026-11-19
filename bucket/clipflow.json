@@ -1,0 +1,29 @@
+{
+    "version": "0.5.0",
+    "description": "剪贴板历史与片段管理（内测）",
+    "homepage": "https://github.com/KJLLin/ClipFlow",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/KJLLin/ClipFlow/releases/download/v0.5.0/clipflow-0.5.0.zip",
+            "hash": "sha256:1e4d3923dbeeeb2f8d3a0acf587a16e182922e5c019690975eaecc300845d020"
+        }
+    },
+    "bin": "ClipFlow.exe",
+    "shortcuts": [
+        [
+            "ClipFlow.exe",
+            "ClipFlow"
+        ]
+    ],
+    "checkver": {
+        "github": "KJLLin/ClipFlow"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/KJLLin/ClipFlow/releases/download/v$version/clipflow-$version.zip"
+            }
+        }
+    }
+}
