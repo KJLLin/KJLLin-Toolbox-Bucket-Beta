@@ -1,0 +1,32 @@
+name: gitee-mirror
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve Gitee repository name
+        id: target
+        run: |
+          if [ "${{ github.event.repository.name }}" = "KJLLin-Toolbox" ]; then
+            echo "repo=kjllin-toolbox" >> "$GITHUB_OUTPUT"
+          else
+            echo "repo=kjllin-toolbox-beta" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Push mirror to Gitee
+        env:
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+        run: |
+          git push --force "https://oauth2:${GITEE_TOKEN}@gitee.com/kjllin/${{ steps.target.outputs.repo }}.git" HEAD:main
