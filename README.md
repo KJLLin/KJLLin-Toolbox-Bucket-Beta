@@ -2,12 +2,12 @@
 
 内测 / 灰度清单，仅限受邀测试者安装。
 
-客户端已内置本 bucket：`toolbox-beta` → `https://github.com/KJLLin/KJLLin-Toolbox-Beta`。
+客户端已内置本 bucket：`toolbox-beta` → `https://github.com/KJLLin/KJLLin-Toolbox-Bucket-Beta`。
 
 ## 使用
 
 ```powershell
-scoop bucket add toolbox-beta https://github.com/KJLLin/KJLLin-Toolbox-Beta
+scoop bucket add toolbox-beta https://github.com/KJLLin/KJLLin-Toolbox-Bucket-Beta
 scoop install toolbox-beta/clipflow
 ```
 

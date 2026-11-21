@@ -19,10 +19,10 @@ jobs:
       - name: Resolve Gitee repository name
         id: target
         run: |
-          if [ "${{ github.event.repository.name }}" = "KJLLin-Toolbox" ]; then
-            echo "repo=kjllin-toolbox" >> "$GITHUB_OUTPUT"
+          if [ "${{ github.event.repository.name }}" = "KJLLin-Toolbox-Bucket" ]; then
+            echo "repo=kjllin-toolbox-bucket" >> "$GITHUB_OUTPUT"
           else
-            echo "repo=kjllin-toolbox-beta" >> "$GITHUB_OUTPUT"
+            echo "repo=kjllin-toolbox-bucket-beta" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Push mirror to Gitee
